@@ -14,7 +14,7 @@ template <typename T>
 inline bool getRequiredParam(const ros::NodeHandle& nh, std::string name, T& value);
 
 VescToOdom::VescToOdom(ros::NodeHandle nh, ros::NodeHandle private_nh) :
-  odom_frame_("odom"), base_frame_("base_link"),
+  odom_frame_("odom"), base_frame_("base_footprint"),
   use_servo_cmd_(true), publish_tf_(false), x_(0.0), y_(0.0), yaw_(0.0)
 {
   // get ROS parameters
