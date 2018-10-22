@@ -113,6 +113,9 @@ void VescToOdom::vescStateCallback(const vesc_msgs::VescStateStamped::ConstPtr& 
 
   // Velocity uncertainty
   /** @todo Think about velocity uncertainty */
+  odom->twist.covariance[0]  = 0.2; ///< x
+  odom->twist.covariance[7]  = 0.002; ///< y
+  odom->twist.covariance[35] = 0.4; ///< yaw
 
   if (publish_tf_) {
     geometry_msgs::TransformStamped tf;
